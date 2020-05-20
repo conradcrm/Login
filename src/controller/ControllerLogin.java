@@ -36,7 +36,7 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 			}
 		break;
 		case "SALIR":
-			new Pop_up("You leave me? It's okay" );
+			new Pop_up("Are you sure to log out?" );
 			break;
 		}
 	}
@@ -72,8 +72,8 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 		view.getSeparatorUser().setForeground(Color.BLACK);
 		String user = view.getTxtUser();
 		String password = view.getPassword();
-		if (user.equalsIgnoreCase("Jasive") && password.equalsIgnoreCase("Love")) {
-			Pop_up.get("Welcome to my life, Do you want to break my heart? to know");
+		if (user.equalsIgnoreCase("Conrado Cruz") && password.equalsIgnoreCase("ConradTeam")) {
+			Pop_up.get("Welcome to my project");
 		}
 		else{
 			view.setlblWarning("Username or password incorrect");
