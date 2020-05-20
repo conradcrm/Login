@@ -4,29 +4,41 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
+import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+
+import view.Login;
+import view.MessageDialog;
+
 public class MoveWindows {
 	int xx,xy;
 	
-	public MoveWindows(JPanel ini, JFrame frame) {
-		MovedFrame movedFrame= new MovedFrame();
-		ini.addMouseListener(movedFrame);
-		PositionFrame positionFrame= new PositionFrame(frame);
-		ini.addMouseMotionListener(positionFrame);
+	public MoveWindows(Login ini, JFrame frame) {
+		Moved moved= new Moved();
+		ini.addMouseListener(moved);
+		Position position= new Position(frame);
+		ini.addMouseMotionListener(position);
+	}
+
+	
+	public MoveWindows(MessageDialog ini, JDialog dialog) {
+		Moved moved= new Moved();
+		ini.addMouseListener(moved);
+		PositionDialog position= new PositionDialog(dialog);
+		ini.addMouseMotionListener(position);
 	}
 	
-	class MovedFrame extends MouseAdapter{
+	class Moved extends MouseAdapter{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			xx=e.getX();
 			xy=e.getY();	
 		}
 	}
-	//********************Permite cambiar la posicion del frame**************************//
-	class PositionFrame extends MouseMotionAdapter{
-		JFrame frame = new JFrame();
-		public PositionFrame(JFrame frame) {
+	
+	class Position extends MouseMotionAdapter{
+		JFrame frame;
+		public Position(JFrame frame) {
 			this.frame= frame;
 		}
 		@Override
@@ -34,6 +46,19 @@ public class MoveWindows {
 			int x= e.getXOnScreen();
 			int y= e.getYOnScreen();
 			frame.setLocation(x-xx,y-xy);
+		}
+	}
+	
+	class PositionDialog extends MouseMotionAdapter{
+		JDialog dialog;
+		public PositionDialog(JDialog dialog) {
+			this.dialog= dialog;
+		}
+		@Override
+		public void mouseDragged(MouseEvent e) {
+			int x= e.getXOnScreen();
+			int y= e.getYOnScreen();
+			dialog.setLocation(x-xx,y-xy);
 		}
 	}
 	

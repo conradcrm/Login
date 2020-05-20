@@ -12,4 +12,7 @@ Login form, created with java
 ##### Login - Authentication Error
 ![LoginError screenshot](mockups/Login-Incorrect.png)
 
+##### Message Dialog - Confirmation
+![MessageDialog screenshot](mockups/Message-Dialog.png)
+
 

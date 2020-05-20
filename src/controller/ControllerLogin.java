@@ -8,7 +8,7 @@ import java.awt.event.FocusListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import view.Login;
-import view.Pop_up;
+import view.MessageDialog;
 
 public class ControllerLogin implements ActionListener, KeyListener, FocusListener {
 
@@ -36,7 +36,7 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 			}
 		break;
 		case "EXIT":
-			new Pop_up("Are you sure to log out?" );
+			new MessageDialog("Are you sure you want to close the window?" );
 			break;
 		}
 	}
@@ -73,7 +73,7 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 		String user = view.getTxtUser();
 		String password = view.getPassword();
 		if (user.equalsIgnoreCase("Conrado Cruz") && password.equalsIgnoreCase("ConradTeam")) {
-			Pop_up.get("Welcome to my project");
+			MessageDialog.get("Welcome to my project");
 		}
 		else{
 			view.setlblWarning("Username or password incorrect");
