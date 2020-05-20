@@ -10,8 +10,8 @@ Login form, created with java
 ![Login screenshot](mockups/Login.png)
 
 ##### Login - Authentication Error
-![LoginError screenshot](mockups/Login.png)
+![LoginError screenshot](mockups/Login-Error.png)
 
 ##### Login - Show Password
-![LoginData screenshot](mockups/Login.png)
+![LoginData screenshot](mockups/Login2.png)
 
