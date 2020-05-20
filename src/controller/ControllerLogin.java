@@ -20,11 +20,11 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String comando = e.getActionCommand();
-		switch (comando) {
-		case "INGRESAR":
+		String action_command = e.getActionCommand();
+		switch (action_command) {
+		case "LOGIN":
 			isEmpy();
-			comprobarAcceso();
+			checkAccess();
 		break;
 		case "SHOW":
 			if (show == false) {
@@ -35,7 +35,7 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 				show = false;
 			}
 		break;
-		case "SALIR":
+		case "EXIT":
 			new Pop_up("Are you sure to log out?" );
 			break;
 		}
@@ -67,7 +67,7 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 		if (view.getPassword().trim().isEmpty())		actionFields("PASSWORD");
 	}
 	
-	private void comprobarAcceso() {
+	private void checkAccess() {
 		view.getSeparatorPassword().setForeground(Color.BLACK);
 		view.getSeparatorUser().setForeground(Color.BLACK);
 		String user = view.getTxtUser();
@@ -93,7 +93,7 @@ public class ControllerLogin implements ActionListener, KeyListener, FocusListen
 	public void keyPressed(KeyEvent e) {
 		if(e.getKeyCode()==KeyEvent.VK_ENTER){
 			isEmpy();
-			comprobarAcceso();
+			checkAccess();
         }
 	}
 	

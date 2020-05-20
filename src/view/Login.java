@@ -31,7 +31,7 @@ public class Login extends JPanel{
 	
 	private JLabel lblUser,lblPassword,lblWarning,ilustration;
 	private JSeparator separatorUser,separatorPassword;
-	private JButton btnIngresar,btnExit, btnShow;
+	private JButton btnLogin,btnExit, btnShow;
 	private JPasswordField txtPassword;
 	private JTextField txtUser;	
 	private JPanel panelLogin;
@@ -93,13 +93,13 @@ public class Login extends JPanel{
 		separatorUser.setBounds(MOVX, MOVY+45, 290, 2);
 		panelLogin.add(separatorUser);
 		
-		btnIngresar = new JButton("Ingresar");
-		btnIngresar.setFocusable(false);
-		btnIngresar.setFont(FONT_BUTTON);
-		btnIngresar.setForeground(Color.WHITE);
-		btnIngresar.setBackground(new Color(80,200,80));
-		btnIngresar.setBounds(MOVX, MOVY+305, 290, 34);
-		panelLogin.add(btnIngresar);
+		btnLogin = new JButton("Login");
+		btnLogin.setFocusable(false);
+		btnLogin.setFont(FONT_BUTTON);
+		btnLogin.setForeground(Color.WHITE);
+		btnLogin.setBackground(new Color(80,200,80));
+		btnLogin.setBounds(MOVX, MOVY+305, 290, 34);
+		panelLogin.add(btnLogin);
 		
 		separatorPassword = new JSeparator();
 		separatorPassword.setBounds(MOVX, MOVY+130, 290, 2);
@@ -107,7 +107,7 @@ public class Login extends JPanel{
 		
 		lblWarning = new JLabel();
 		lblWarning.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblWarning.setFont(new Font("Arial", Font.PLAIN, 11));
+		lblWarning.setFont(new Font("Arial", Font.PLAIN, 12));
 		lblWarning.setBorder(null);
 		lblWarning.setForeground(Color.RED);
 		lblWarning.setBackground(Color.WHITE);
@@ -146,13 +146,12 @@ public class Login extends JPanel{
 		btnShow.setBackground(Color.WHITE);
 		btnShow.setBounds(313, MOVY+103, 24, 25);
 		panelLogin.add(btnShow);
-		
 	}
 	
-	public void conectaControlador(ControllerLogin control) {
+	public void connectController(ControllerLogin control) {
 		
-		btnIngresar.addActionListener(control);
-		btnIngresar.setActionCommand("INGRESAR");
+		btnLogin.addActionListener(control);
+		btnLogin.setActionCommand("LOGIN");
 				
 		btnShow.addActionListener(control);
 		btnShow.setActionCommand("SHOW");
@@ -163,7 +162,7 @@ public class Login extends JPanel{
 		txtPassword.addFocusListener(control);
 		
 		btnExit.addActionListener(control);
-		btnExit.setActionCommand("SALIR");
+		btnExit.setActionCommand("EXIT");
 		
 		txtPassword.addKeyListener(control);
 		txtUser.addKeyListener(control);
@@ -182,7 +181,6 @@ public class Login extends JPanel{
 		setOpaque(false);
 	}
 	
-	
 	public String getTxtUser(){
 		return txtUser.getText(); 	
 	}
@@ -198,7 +196,6 @@ public class Login extends JPanel{
 	public JPasswordField getTxtPassword() {
 		return txtPassword;
 	}
-
 	
 	public JButton getBtnShow() {
 		return btnShow;
