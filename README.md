@@ -14,5 +14,3 @@ Login form, created with java
 
 ##### Message Dialog - Confirmation
 ![MessageDialog screenshot](mockups/Message-Dialog.png)
-
-
